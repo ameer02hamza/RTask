@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h2>My Customers</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Italy</td>
+  </tr>
+  <tr>
+    <td>North/South</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Paris specialites</td>
+    <td>France</td>
+  </tr>
+</table>
+
+<div class="container">
+	<div class="row containerItems">
+		<div data-filter="beroy knightmobile html accion" data-search="vampire cannon" class="col-12 col-sm-6 col-md-4" style="">
+            <div class="card card-lg">
+
+              <div class="card-img">
+                <a>
+                  <img src="img/example.jpg" class="card-img-top" alt="Vampire Cannon"> </a>
+                <div class="badge badge-pc">ACTION</div>
+              </div>
+
+              <div class="card-block">
+                <h4 class="card-title">
+                  Vampire Cannon
+                </h4>
+              </div>
+
+            </div>
+		</div>
+
+
+        <div data-search="western mahjong" class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+
+              <div class="card-img">
+                <a>
+                  <img src="img/example.jpg" class="card-img-top" alt="western mahjong"> </a>
+                <div class="badge badge-pc">PUZZLE</div>
+              </div>
+
+              <div class="card-block">
+                <h4 class="card-title">
+                 Western Mahjong
+                </h4>
+              </div>
+
+            </div>
+         </div>
+
+          <div data-search="stick freak" class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+
+              <div class="card-img">
+                <a>
+                  <img src="img/example.jpg" class="card-img-top" alt="Stick Freak"> </a>
+                <div class="badge badge-xbox-one">ARCADE</div>
+              </div>
+
+              <div class="card-block">
+                <h4 class="card-title">Stick Freak
+                </h4>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div data-search="mahjong master 2 two" class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+
+              <div class="card-img">
+                <a>
+                  <img src="img/example.jpg" class="card-img-top" alt="mahjong master 2"> </a>
+                <div class="badge badge-xbox-one">PUZZLE</div>
+              </div>
+
+              <div class="card-block">
+                <h4 class="card-title">Mahjong Master 2
+                </h4>
+              </div>
+
+            </div>
+          </div>
+
+		<div data-search="7 x 7 ultimate 7x7 sevenxseven seven" class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+
+              <div class="card-img">
+                <a>
+                  <img src="img/example.jpg" class="card-img-top" alt="7 x 7 ultimate"> </a>
+                <div class="badge badge-xbox-one">PUZZLE</div>
+              </div>
+
+              <div class="card-block">
+                <h4 class="card-title">7 x 7 ultimate
+                </h4>
+              </div>
+
+            </div>
+          </div>
+
+          <div data-search="jewel duel" class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+
+              <div class="card-img">
+                <a>
+                  <img src="img/example.jpg" class="card-img-top" alt="jewel duel"> </a>
+                <div class="badge badge-xbox-one">PUZZLE</div>
+              </div>
+
+              <div class="card-block">
+                <h4 class="card-title">Jewel Duel
+                </h4>
+              </div>
+
+            </div>
+          </div>
+
+
+     </div>
+</div>
+    <script type="text/javascript">
+    	     $('input.form-control.search-game').search(function(){
+
+          		//execute after done typing.
+
+      });
+    </script>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>

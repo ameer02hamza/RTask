@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Details</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-grid.css' %}" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-reboot.css' %}" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-reboot.min.css' %}" />
+</head>
+<body>
+
+    <div class="container" style="width: 880px;">
+        <h2 style="margin-top: 30px;">Movie Listings @ GV Cenima </h2>
+        <a class="btn btn-light" href="{% url 'Movies:movielist' %}" > back</a>
+        <h3>{{object.mdata.name}}</h3>
+        <p>({{object.type}}: {{object.label}})</p>
+        <hr>
+        <div class="row" >
+            <div class="col" > 
+                <img src="/{{object.mdata.imgPath}}" width="100%" height="100%" />
+            </div>
+            <div class="col" >
+                <div class="row">
+                    <div class="col">
+                        <h4>Details</h4>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col"><p>Genre: {{object.mdata.genre}}</p></div>
+                </div>
+                <div class="row">
+                    <div class="col"><p>Language: {{object.mdata.language}}</p></div>
+                </div>
+                <div class="row">
+                    <div class="col"><p>Duration: {{object.mdata.duration}} minutes</p></div>
+                </div>
+                <div class="row">
+                    <div class="col"><p>User Rating: {{object.mdata.userRating}}</p></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Synposis</h4>
+                        <p> {{object.mdata.description}}</p>
+                    </div>                    
+                </div>
+            </div>
+
+        </div>
+        </div>
+    
+        <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
